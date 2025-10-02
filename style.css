@@ -1,0 +1,318 @@
+/* ————— Globalūs stiliai ————— */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfaf6;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  transition: background 0.3s, padding 0.3s;
+  z-index: 1000;
+}
+.site-header.shrink {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 20px;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+}
+.site-nav ul {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.burger span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ————— Hero / Background sekcijos ————— */
+.hero, .products-hero, .contact-hero {
+  position: relative;
+  background-image: url('assets/wood-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 60px;
+}
+.hero {
+  height: 80vh;
+}
+.products-hero {
+  height: 50vh;
+}
+.contact-hero {
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 100px;
+}
+.hero-overlay, .products-hero-overlay, .contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.hero-content h1, .products-hero-content h1, .contact-hero-content h1 {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.hero-content p, .products-hero-content p, .contact-hero-content p {
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  padding-bottom: 20px;
+}
+
+/* ————— Mygtukas ————— */
+.btn-primary {
+  background-color: #deb887;
+  color: #333;
+  padding: 14px 34px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ————— Produktų puslapis ————— */
+.products-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+.product-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.product-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.product-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.product-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+.product-card h3, .product-card p {
+  margin: 16px;
+}
+
+/* ————— Kontaktų puslapio stiliai ————— */
+.contact-form-wrapper.glass {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  margin-bottom: 60px;
+  color: #fff;
+  z-index: 10;
+}
+.contact-hero-content {
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 60px;
+}
+.contact-hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+}
+.contact-hero-content p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.contact-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.contact-info {
+  flex: 1 1 200px;
+}
+.contact-info p,
+.contact-info a {
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+.contact-form {
+  flex: 2 1 300px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+.contact-form button {
+  padding: 12px 34px;
+  background-color: #deb887;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-form button:hover {
+  background-color: #cfa269;
+}
+
+/* ————— Responsive ————— */
+@media (max-width: 768px) {
+  .site-nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #fff;
+    flex-direction: column;
+    display: none;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .site-nav.active {
+    display: flex;
+  }
+  .site-nav ul {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  .burger {
+    display: flex;
+  }
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+html {
+  scroll-padding-top: 80px; /* aukštis toks kaip header (ar šiek tiek daugiau) */
+}
+.product-card a:not(:has(img)) {
+  display: none !important;
+}
+
+.hidden-image {
+  display: none !important;
+}
+
+.hidden-image {
+  display: none !important;
+}
+
+.hidden-image {
+  display: none !important;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #333;
+  padding: 8px 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+}
+.btn-secondary:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.product-card img {
+  width: 75%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+   grid-template-columns: repeat(3, 1fr);
+ /* Tik viena kortelė per eilutę */
+    gap: 30px;
+  }
+
+  .product-card img {
+    height: 220px; /* Šiek tiek mažesnis vaizdas telefone */
+  }
+
+  .hero {
+    height: 60vh; /* Kad fonas mobiliajame neuzimtų viso ekrano */
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+

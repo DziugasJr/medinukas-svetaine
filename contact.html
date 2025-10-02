@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontaktai – Medinukas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Medinukas</a>
+      <div id="burger" class="burger"><span></span><span></span><span></span></div>
+      <nav class="site-nav" id="nav-menu">
+        <ul>
+          <li><a href="index.html">Pagrindinis</a></li>
+          <li><a href="products.html">Produktai</a></li>
+          <li><a href="contact.html">Kontaktai</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact-hero">
+    <div class="contact-hero-overlay"></div>
+    <div class="contact-hero-content">
+      <h1>Susisiek su mumis</h1>
+      <p>Mes visada pasiruošę išklausyti</p>
+    </div>
+
+    <div class="contact-form-wrapper glass">
+      <div class="contact-container">
+        <div class="contact-info">
+          <p><strong>📞 Telefonas:</strong> <a href="tel:+37062236411">+370 622 36411</a></p>
+          <p><strong>📧 El. paštas:</strong> <a href="mailto:medinukaslazdijai@gmail.com">medinukaslazdijai@gmail.com</a></p>
+          <p><strong>🌐 Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61578594175448" target="_blank">Medinukas Lazdijai</a></p>
+        </div>
+
+        <!-- Formos pradžia -->
+        <form id="order-form" action="https://formsubmit.co/medinukaslazdijai@gmail.com" method="POST">
+  <input type="hidden" name="_redirect" value="https://tavasvetaine.lt/thankyou.html">
+  <input type="hidden" name="_subject" value="Naujas užsakymas iš svetainės">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+
+  <div class="contact-form">
+    <input type="text" name="Vardas" id="name" placeholder="Vardas" required />
+    <input type="email" name="El. paštas" id="email" placeholder="El. paštas" />
+    <input type="tel" name="Telefonas" id="phone" placeholder="Telefono numeris" />
+    <input type="text" name="Užsakomas gaminys" id="product" placeholder="Užsakomas gaminys" required />
+    <textarea name="Adresas" id="address" rows="4" placeholder="Adresas (siuntimui)" required></textarea>
+    <button type="submit">Siųsti užsakymą</button>
+  </div>
+</form>
+
+        <!-- Formos pabaiga -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Užpildo automatiškai produkto laukelį, jei ateina per mygtuką "Užsakyti"
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const product = params.get("product");
+      if (product) {
+        document.getElementById("product").value = decodeURIComponent(product);
+      }
+
+      const form = document.getElementById("order-form");
+      form.addEventListener("submit", function (e) {
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+
+        if (!email && !phone) {
+          e.preventDefault();
+          alert("Įveskite bent el. paštą arba telefono numerį.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

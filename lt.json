@@ -1,0 +1,14 @@
+{
+  "home": "Pagrindinis",
+  "products": "Produktai",
+  "contact": "Kontaktai",
+  "welcome": "Sveiki atvykę į Medinukas!",
+  "intro": "Čia rasite unikalius rankų darbo medžio dirbinius.",
+  "name": "Vardas",
+  "email": "El. paštas",
+  "product": "Užsakomas gaminys",
+  "address": "Adresas (siuntimui)",
+  "submit": "Siųsti užsakymą",
+  "thanks": "Ačiū už užsakymą!",
+  "payment_instruction": "Pavedimą atlikite šiais rekvizitais:"
+}

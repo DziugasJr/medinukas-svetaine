@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medinukas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Medinukas</a>
+      <div id="burger" class="burger"><span></span><span></span><span></span></div>
+      <nav class="site-nav" id="nav-menu">
+        <ul>
+          <li><a href="index.html">Pagrindinis</a></li>
+          <li><a href="products.html">Produktai</a></li>
+          <li><a href="contact.html">Kontaktai</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Rankų darbo medžio dirbiniai</h1>
+      <p>Unikalūs gaminiai, pagaminti su meile</p>
+      <a href="#products-section" class="btn-primary" id="scroll-to-products" style="z-index: 10; position: relative;">Žiūrėti kolekciją</a>
+
+    </div>
+  </section>
+
+    <section class="products-section" id="products-section">
+    <h2>Mūsų pasiūlymai</h2>
+    <div class="product-grid" id="product-grid"></div>
+  </section>
+
+  <!-- Pirma: glightbox biblioteka -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<!-- Tada: tavo JS failai, kurie ją naudoja -->
+<script src="products.js"></script>
+<script src="main.js"></script>
+
+  
+</body>
+</html>
+
+
