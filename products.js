@@ -4,6 +4,7 @@ const products = [
     price: "€150",
     images: [
       "products/uosio-stalas.jpg",
+      "products/uosio-stalas1.jpg",
       "products/uosio-stalas2.jpg",
       "products/uosio-stalas3.jpg"
     ]
@@ -33,9 +34,9 @@ const products = [
   {title: "Rankų darbo degintas vazonas",
     price: "Nuo €25",
       images: [
+      "products/vazonas-degintas.jpg",
       "products/vazonas-degintas1.jpg",
-      "products/vazonas-degintas2.jpg",
-      "products/vazonas-degintas3.jpg"
+      "products/vazonas-degintas2.jpg"
     ]
   },
     {
