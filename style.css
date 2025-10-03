@@ -316,3 +316,189 @@ html {
   }
 }
 
+/* ============================= */
+/* MOBILIOS VERSIJOS PATAISYMAI */
+/* ============================= */
+@media (max-width: 768px) {
+  /* Hero sekcija */
+  .hero-content h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .btn-primary {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  /* Produktų tinklelis */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Vienas stulpelis */
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .product-item {
+    text-align: center;
+  }
+
+  .product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .product-item h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .product-item p {
+    font-size: 16px;
+  }
+
+  /* Header navigacija */
+  .site-header {
+    padding: 10px 20px;
+  }
+
+  .burger {
+    display: block; /* parodyti burger mygtuką */
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .site-nav.active {
+    display: flex;
+  }
+
+  /* Kontaktų forma */
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-width: 600px; /* maksimalus plotis dideliame ekrane */
+  margin: 0 auto; /* centruoti */
+  display: block;
+  object-fit: cover;
+}
+
+/* Bendri konteineriai su ribotu pločiu */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero teksto dalis riboti */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Kontaktų forma ribotas plotis */
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* NUOTRAUKOS */
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* TEKSTO IR BLOKŲ PLOČIO RIBOJIMAS */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* MOBILIOS VERSIJOS PATAISYMAI */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
