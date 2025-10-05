@@ -547,3 +547,45 @@ html {
     color: #333;
   }
 }
+
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px; /* sumažinta iš 20px */
+    padding: 15px;
+    border: none; /* arba palik jei norisi */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    width: max-content; /* pritaiko meniu pagal turinio plotį */
+  }
+
+  .site-nav.active {
+    display: flex;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav a {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+  }
+
+  .site-nav a:hover {
+    background-color: #f0f0f0;
+  }
+}
