@@ -589,3 +589,148 @@ html {
     background-color: #f0f0f0;
   }
 }
+
+/* ————— Globalūs stiliai ————— */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfaf6;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  transition: background 0.3s, padding 0.3s;
+  z-index: 1000;
+}
+.site-header.shrink {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 20px;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Navigacija ir burger */
+.site-nav ul {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.burger span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ————— Produkto / puslapių stiliai ————— */
+/* ... tavo esami stiliai lieka čia ... */
+
+/* ————— Responsive / mobilūs pataisymai ————— */
+@media (max-width: 768px) {
+  /* Parodyti burger ikoną */
+  .burger {
+    display: flex;
+  }
+
+  /* Pagrindinė navigacija mobiliame ekrane */
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px; /* truputį į vidų */
+    padding: 15px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2000; /* kad būtų virš visko */
+    width: max-content;
+  }
+  .site-nav.active {
+    display: flex;
+  }
+  .site-nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  .site-nav li {
+    list-style: none;
+  }
+  .site-nav a {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    display: block;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+  }
+  .site-nav a:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Kiti mobilūs pataisymai (produktų grid, hero, forma) */
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .hero-content p {
+    font-size: 16px;
+    text-align: center;
+  }
+  .btn-primary {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+  .contact-form button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
