@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontaktai – Medinukas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/logo.jpg" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -37,48 +37,27 @@
           <p><strong>🌐 Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61578594175448" target="_blank">Medinukas Lazdijai</a></p>
         </div>
 
-        <!-- Formos pradžia -->
         <form id="order-form" action="https://formsubmit.co/medinukaslazdijai@gmail.com" method="POST">
-  <input type="hidden" name="_redirect" value="https://tavasvetaine.lt/thankyou.html">
-  <input type="hidden" name="_subject" value="Naujas užsakymas iš svetainės">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_redirect" value="https://medinukas.com/thankyou.html">
+          <input type="hidden" name="_subject" value="Naujas užsakymas iš svetainės">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
 
-  <div class="contact-form">
-    <input type="text" name="Vardas" id="name" placeholder="Vardas" required />
-    <input type="email" name="El. paštas" id="email" placeholder="El. paštas" />
-    <input type="tel" name="Telefonas" id="phone" placeholder="Telefono numeris" />
-    <input type="text" name="Užsakomas gaminys" id="product" placeholder="Užsakomas gaminys" required />
-    <textarea name="Adresas" id="address" rows="4" placeholder="Adresas (siuntimui)" required></textarea>
-    <button type="submit">Siųsti užsakymą</button>
-  </div>
-</form>
-
-        <!-- Formos pabaiga -->
+          <div class="contact-form">
+            <input type="text" name="Vardas" id="name" placeholder="Vardas" required />
+            <input type="email" name="El. paštas" id="email" placeholder="El. paštas" />
+            <input type="tel" name="Telefonas" id="phone" placeholder="Telefono numeris" />
+            <input type="text" name="Užsakomas gaminys" id="product" placeholder="Užsakomas gaminys" required />
+            <textarea name="Adresas" id="address" rows="4" placeholder="Adresas (siuntimui)" required></textarea>
+            <button type="submit">Siųsti užsakymą</button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
-  <script>
-    // Užpildo automatiškai produkto laukelį, jei ateina per mygtuką "Užsakyti"
-    document.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      const product = params.get("product");
-      if (product) {
-        document.getElementById("product").value = decodeURIComponent(product);
-      }
+  <button id="scrollTopBtn" class="scroll-top-btn">▲</button>
 
-      const form = document.getElementById("order-form");
-      form.addEventListener("submit", function (e) {
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-
-        if (!email && !phone) {
-          e.preventDefault();
-          alert("Įveskite bent el. paštą arba telefono numerį.");
-        }
-      });
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

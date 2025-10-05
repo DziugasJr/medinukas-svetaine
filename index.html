@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medinukas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <title>Medinukas – rankų darbo medžio dirbiniai</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/logo.jpg" type="image/x-icon" />
+
+  <!-- SEO / Meta -->
+  <meta name="description" content="Rankų darbo medžio dirbiniai – unikalūs, kokybiški mediniai gaminiai su meile.">
+  <meta property="og:title" content="Medinukas – rankų darbo medžio dirbiniai">
+  <meta property="og:description" content="Unikalūs medžio dirbiniai, pagaminti su meile.">
+  <meta property="og:image" content="https://medinukas.com/assets/social-preview.jpg">
+  <meta property="og:url" content="https://medinukas.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Medinukas – rankų darbo medžio dirbiniai">
+  <meta name="twitter:description" content="Unikalūs medžio dirbiniai, pagaminti su meile.">
+  <meta name="twitter:image" content="https://medinukas.com/assets/social-preview.jpg">
+
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
@@ -28,25 +44,20 @@
     <div class="hero-content">
       <h1>Rankų darbo medžio dirbiniai</h1>
       <p>Unikalūs gaminiai, pagaminti su meile</p>
-      <a href="#products-section" class="btn-primary" id="scroll-to-products" style="z-index: 10; position: relative;">Žiūrėti kolekciją</a>
-
+      <a href="#products-section" class="btn-primary" id="scroll-to-products">Žiūrėti kolekciją</a>
     </div>
   </section>
 
-    <section class="products-section" id="products-section">
+  <section class="products-section" id="products-section">
     <h2>Mūsų pasiūlymai</h2>
     <div class="product-grid" id="product-grid"></div>
   </section>
 
-  <!-- Pirma: glightbox biblioteka -->
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <!-- Scroll to top mygtukas -->
+  <button id="scrollTopBtn" class="scroll-top-btn">▲</button>
 
-<!-- Tada: tavo JS failai, kurie ją naudoja -->
-<script src="products.js"></script>
-<script src="main.js"></script>
-
-  
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="products.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
-
-
