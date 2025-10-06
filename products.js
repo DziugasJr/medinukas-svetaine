@@ -31,9 +31,10 @@ const products = [
     ]
   },
 
-  {title: "Rankų darbo degintas vazonas",
+  {
+    title: "Rankų darbo degintas vazonas",
     price: "Nuo €25",
-      images: [
+    images: [
       "products/vazonas-degintas.jpg",
       "products/vazonas-degintas1.jpg",
       "products/vazonas-degintas2.jpg"

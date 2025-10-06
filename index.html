@@ -44,8 +44,8 @@
     <div class="hero-content">
       <h1>Rankų darbo medžio dirbiniai</h1>
       <p>Unikalūs gaminiai, pagaminti su meile</p>
-      <a href="#products-section" class="btn-primary" id="scroll-to-products">Žiūrėti kolekciją</a>
-    </div>
+  <a href="#products-section" class="btn-primary" id="scroll-to-products">Žiūrėti kolekciją</a>
+</div>
   </section>
 
   <section class="products-section" id="products-section">
@@ -58,6 +58,21 @@
 
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="products.js"></script>
-  <script src="main.js"></script>
+ <script src="main.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("scroll-to-products");
+    const sec = document.getElementById("products-section");
+    console.log("Inline test:", btn, sec);
+    if (btn && sec) {
+      btn.addEventListener("click", e => {
+        e.preventDefault();
+        sec.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  });
+</script>
+
 </body>
 </html>

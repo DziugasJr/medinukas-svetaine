@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ačiū už užsakymą</title>
+  <title>Ačiū už užsakymą – Medinukas</title>
+
   <link rel="icon" href="assets/logo.jpg" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,16 +12,33 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">Medinukas</a>
-    </div>
+      <div id="burger" class="burger"><span></span><span></span><span></span></div>
+      <nav class="site-nav" id="nav-menu">
+        <ul>
+          <li><a href="index.html">Pagrindinis</a></li>
+          <li><a href="products.html">Produktai</a></li>
+          <li><a href="contact.html">Kontaktai</a></li>
+        </ul>
+      </nav>
+    </div><!-- .header-inner -->
   </header>
 
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Ačiū už Jūsų užsakymą!</h1>
-      <p>Susisieksime su Jumis kaip įmanoma greičiau.</p>
-      <a href="index.html" class="btn-primary">Grįžti į pagrindinį</a>
+      <p>Mes susisieksime su Jumis netrukus.</p>
+      <button type="button" class="btn-primary" onclick="window.location.href='index.html'">Grįžti į pagrindinį</button>
     </div>
   </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
+      document.getElementById('backHomeBtn').onclick = function() {
+        window.location.href = 'index.html';
+      };
+    });
+  </script>
 </body>
 </html>

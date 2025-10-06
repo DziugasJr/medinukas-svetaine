@@ -286,35 +286,7 @@ html {
   color: #fff;
 }
 
-.product-card img {
-  width: 75%;
-  height: auto;
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .product-grid {
-   grid-template-columns: repeat(3, 1fr);
- /* Tik viena kortelė per eilutę */
-    gap: 30px;
-  }
-
-  .product-card img {
-    height: 220px; /* Šiek tiek mažesnis vaizdas telefone */
-  }
-
-  .hero {
-    height: 60vh; /* Kad fonas mobiliajame neuzimtų viso ekrano */
-  }
-
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
+/* Removed duplicate .product-card img and conflicting media query for .product-grid and .hero-content */
 
 /* ============================= */
 /* MOBILIOS VERSIJOS PATAISYMAI */
@@ -440,9 +412,6 @@ html {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-}
-
-/* NUOTRAUKOS */
 .product-card img {
   width: 100%;
   height: auto;
@@ -452,50 +421,26 @@ html {
   object-fit: cover;
 }
 
-/* TEKSTO IR BLOKŲ PLOČIO RIBOJIMAS */
+/* Bendri konteineriai su ribotu pločiu */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/* Hero teksto dalis riboti */
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
+
+/* Kontaktų forma ribotas plotis */
 .contact-form-wrapper {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
 }
-
-/* MOBILIOS VERSIJOS PATAISYMAI */
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 24px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-
-  .btn-primary {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    font-size: 16px;
-  }
-
   .contact-form button {
     width: 100%;
     font-size: 16px;
@@ -733,4 +678,12 @@ body {
     font-size: 16px;
     padding: 12px;
   }
+}
+
+.products-section {
+  min-height: 400px; /* ar daugiau, jei reikia */
+}
+.btn-primary {
+  position: relative;
+  z-index: 2;
 }

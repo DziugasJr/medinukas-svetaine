@@ -1,27 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Scroll to products
+  // Scroll mygtukas – „Žiūrėti kolekciją“ (tik index puslapyje)
   const scrollBtn = document.getElementById("scroll-to-products");
-  if (scrollBtn) {
+  const section = document.getElementById("products-section");
+
+  if (scrollBtn && section) {
     scrollBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      const section = document.getElementById("products-section");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  // Grįžimo mygtukas „Grįžti į pagrindinį“
+  const backBtn = document.getElementById("back-to-home");
+  const backHomeBtn = document.getElementById("backHomeBtn");
+  if (backBtn) {
+    backBtn.addEventListener("click", (e) => {
+      // Nereikia preventDefault, nes href jau nukreips
+      // Bet galima papildomai:
+      window.location.href = "index.html";
+    });
+  }
+  if (backHomeBtn) {
+    backHomeBtn.addEventListener("click", (e) => {
+      // Nereikia preventDefault, nes href jau nukreips
+      // Bet galima papildomai:
+      window.location.href = "index.html";
+    });
+  }
+
+  // Shrinking header on scroll
+  const header = document.querySelector(".site-header");
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
       }
     });
   }
 
-  // Header shrink on scroll
-  const header = document.querySelector(".site-header");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      header.classList.add("shrink");
-    } else {
-      header.classList.remove("shrink");
-    }
-  });
-
-  // Burger menu toggle
+  // Burger menu navigacija
   const burger = document.getElementById("burger");
   const navMenu = document.getElementById("nav-menu");
   if (burger && navMenu) {
@@ -31,22 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Scroll to top button
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
-  if (scrollTopBtn) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.style.display = "flex";
-      } else {
-        scrollTopBtn.style.display = "none";
-      }
-    });
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  // Autopopulate product field in contact
+  // Užpildo produktą formoje, jei perduotas per URL
   const urlParams = new URLSearchParams(window.location.search);
   const product = urlParams.get("product");
   if (product) {
@@ -54,5 +58,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (prodField) {
       prodField.value = decodeURIComponent(product);
     }
+  }
+
+  // Scroll į viršų mygtukas (jei turi)
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   }
 });
