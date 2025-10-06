@@ -38,21 +38,22 @@
         </div>
 
         <form id="order-form" action="https://formsubmit.co/medinukaslazdijai@gmail.com" method="POST">
-         <input type="hidden" name="_next" value="https://medinukas.com/thankyou.html">
+  <!-- Pakeisk _redirect į _next -->
+  <input type="hidden" name="_next" value="https://medinukas.com/thankyou.html">
+  <input type="hidden" name="_subject" value="Naujas užsakymas iš svetainės">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
 
-          <input type="hidden" name="_subject" value="Naujas užsakymas iš svetainės">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+  <div class="contact-form">
+    <input type="text" name="Vardas" id="name" placeholder="Vardas" required />
+    <input type="email" name="El. paštas" id="email" placeholder="El. paštas" />
+    <input type="tel" name="Telefonas" id="phone" placeholder="Telefono numeris" />
+    <input type="text" name="Užsakomas gaminys" id="product" placeholder="Užsakomas gaminys" required />
+    <textarea name="Adresas" id="address" rows="4" placeholder="Adresas (siuntimui)" required></textarea>
+    <button type="submit">Siųsti užsakymą</button>
+  </div>
+</form>
 
-          <div class="contact-form">
-            <input type="text" name="Vardas" id="name" placeholder="Vardas" required />
-            <input type="email" name="El. paštas" id="email" placeholder="El. paštas" />
-            <input type="tel" name="Telefonas" id="phone" placeholder="Telefono numeris" />
-            <input type="text" name="Užsakomas gaminys" id="product" placeholder="Užsakomas gaminys" required />
-            <textarea name="Adresas" id="address" rows="4" placeholder="Adresas (siuntimui)" required></textarea>
-            <button type="submit">Siųsti užsakymą</button>
-          </div>
-        </form>
       </div>
     </div>
   </section>
